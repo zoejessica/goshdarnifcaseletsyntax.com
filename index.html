@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>How Do I Write If Case Let in Swift?</title>
+    <style>
+    body {
+      background-color: #30303A;
+      color: #fff;
+      font-family: Helvetica Neue, sans-serif;
+      font-size: 20px;
+      padding: 40px;
+      padding-bottom: 0;
+    }
+
+    strong {
+      color: #B68DE0;
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-bottom: 1.5em;
+      text-align: center;
+    }
+
+    h2 {
+      font-weight: normal;
+    }
+
+    .let {
+      color: #B68DE0;
+    }
+
+    .expression {
+      color: #F9DF4A;
+    }
+
+    .pattern {
+      color: #1FDDBA;
+    }
+
+    .comment {
+	  color: #959292;
+    }
+
+    .disclaimer {
+      line-height: 2em;
+      padding-bottom: 2em;
+    }
+
+    div p.disclaimer {
+        padding-left: 2em;
+    }
+
+    code {
+      display: block;
+      font-family: Menlo, monaco, monospace;
+      font-size: 20px;
+      margin-bottom: 3em;
+      margin-left: 40px;
+      margin-top: 1.5em;
+    }
+
+    .inline-code {
+        font-family: Menlo, monaco, monospace;
+        color: #B68DE0;
+    }
+
+    footer {
+      font-size: 12px;
+      margin-top: 200px;
+      opacity: 0.4;
+      text-align: right;
+    }
+
+    a {
+      color: #B68DE0;
+      text-decoration: none;
+    }
+
+    </style>
+    <style media='print'>
+    body {
+      background-color: #FFFFFF;
+      font-size: 16px;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 1em;
+    }
+
+    code {
+      font-size: 16px;
+      margin-bottom: 2em;
+      margin-left: 20px;
+    }
+
+    footer {
+      font-size: 10px;
+      margin-top: 40px;
+    }
+    </style>
+    <link href="apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57">
+    <link href="apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+    <link href="apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+    <link href="apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
+    <link href="apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60">
+    <link href="apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
+    <link href="apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
+    <link href="apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
+    <link href="favicon-196x196.png" rel="icon" sizes="196x196" type="image/png">
+    <link href="favicon-160x160.png" rel="icon" sizes="160x160" type="image/png">
+    <link href="favicon-96x96.png" rel="icon" sizes="96x96" type="image/png">
+    <link href="favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+    <link href="favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+    <meta content="Pattern matching syntax" name="apple-mobile-web-app-title">
+    <base target="_top">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-9504319-7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-9504319-7');
+    </script>
+</head>
+<body>
+    <style>
+    #forkongithub a{background:#AA3333;color:#fff;text-decoration:none;font-family:Helvetica Neue,sans-serif;text-align:center;font-weight:bold;padding:5px 40px;font-size:1rem;line-height:2rem;position:relative;transition:0.5s;}#forkongithub a:hover{background:#c11;color:#fff;}#forkongithub a::before,#forkongithub a::after{content:"";width:100%;display:block;position:absolute;top:1px;left:0;height:1px;background:#fff;}#forkongithub a::after{bottom:1px;top:auto;}@media screen and (min-width:800px){#forkongithub{position:absolute;display:block;top:0;right:0;width:200px;overflow:hidden;height:200px;z-index:9999;}#forkongithub a{width:200px;position:absolute;top:60px;right:-60px;transform:rotate(45deg);-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);-moz-transform:rotate(45deg);-o-transform:rotate(45deg);box-shadow:4px 4px 10px rgba(0,0,0,0.3);}}
+    </style><span id="forkongithub"><a href="https://github.com/zoejessica/goshdarnifcaseletsyntax.com">Fork me on GitHub</a></span><br>
+    <br>
+    <h1>How Do I Write If Case Let in Swift?</h1>
+    <div>
+        <h2><strong>if case let</strong> is an abbreviated form of <strong>switch</strong></h2>
+        <p class='disclaimer'><span class='inline-code'>case let</span> immediately precedes the <span class='pattern'>candidate pattern</span> in both versions. However, when using <span class='inline-code'>if case let</span> the <span class='expression'>value</span> comes after the = operator:</p>
+        <code>if case let <span class='pattern'>Puppy.mastiff(droolRating, weight)</span> = <span class='expression'>fido</span> {<br/>
+        <span class='comment'>...  // tell fido he's a good boy</span><br/>
+        </code><p class='disclaimer'>is equivalent to: </p><code>
+        switch <span class='expression'>fido</span> {<br/>
+
+        case let <span class='pattern'>Puppy.mastiff(droolRating, weight)</span>:<br/>
+        <span class='comment'>... // tell fido he's a good boy</span><br/>
+        </code>
+    </div>
+        <div>
+        <h2><strong>let</strong> binds associated values</h2>
+        <p class='disclaimer'><span class='inline-code'>case let </span>is a shortcut so all subsequent associated values can be bound just by providing variable names. Alternatively write <span class='inline-code'>let</span> as usual, before each name:</p>
+        <code>if case <span class='pattern'>Puppy.mastiff(<span class='let'>let</span> droolRating, <span class='let'>let</span> weight)</span> = <span class='expression'>fido</span> {<br/>
+        <span class='comment'>...  // does that pup need an extra treat?</span>
+        </code>
+        <p class='disclaimer'>Bind a tuple with all the values at once:</p>
+         <code>if case <span class='let'>let</span> <span class='pattern'>Puppy.mastiff(characteristics)</span> = <span class='expression'>fido</span> {<br/>
+        <span class='comment'>...  // how cute is this doggie, exactly?</span><br/>
+        </code>
+        <p class='disclaimer'>Remember the syntactic sugar to match non-nil optionals:</p>
+         <code>if case <span class='let'>let</class> <span class='pattern'>Puppy.mastiff(droolFactor, weight)?</span> = <span class='expression'>potentialPup</span> {<br/>
+        <span class='comment'>...  // oh thank goodness, a puppy</span><br/>
+        </code>
+        <p class='disclaimer'>Omit <span class='let'>let</span> entirely if you don't need the associated values:</p>
+         <code>if case <span class='pattern'>Puppy.mastiff</span> = <span class='expression'>fido</span> {<br/>
+        <span class='comment'>...  // just hand me the pupster</span><br/>
+        </code>
+    </div>
+    <div>
+        <h2>Add conditions to <strong>if</strong> and <strong>guard</strong> using commas</h2>
+        <code>if case let <span class='pattern'>Puppy.mastiff(droolRating, _)</span> = <span class='expression'>fido</span>, droolRating > 8 {<br/>
+        <span class='comment'>...  // you're going to need a new couch</span><br/>
+        </code>
+
+        <code>guard case let <span class='pattern'>Puppy.mastiff(droolRating, _)</span> = <span class='expression'>fido</span>, droolRating < 10 else {<br/>
+        <span class='comment'>...  // that dog is not coming in the house</span><br/>
+        </code>
+    </div>
+    <div>
+    <h2>Iterate using <strong>for</strong>, <strong>where</strong> and logical operators</h2>
+    <code>for case let <span class='pattern'>Puppy.mastiff(droolRating, weight)</span> in <span class='expression'>rescuePups</span> where droolRating > 5 && weight > 15.0 {<br/>
+    <span class='comment'>...  // I'll take the chubby, soggy ones please</span><br/>
+    </code>
+</div>
+        <p>Other more in-depth articles:
+	        <li><a href='https://appventure.me/2015/08/20/swift-pattern-matching-in-detail/'>Swift Pattern Matching In Detail - Benedikt Terhechte</a></li>
+	        <li><a href='https://oleb.net/blog/2015/09/swift-pattern-matching/'>Pattern Matching In Swift - Ole Begemann</a></li>
+	        <li><a href='http://alisoftware.github.io/swift/pattern-matching/2016/05/16/pattern-matching-4/'>Pattern Matching - Crunchy Development</a></li> </p>
+	                <br>
+    </div>
+    <footer>
+        By <a href="http://twitter.com/zoejessica">Zoe Smith</a>, with thanks to <a href="http://zeveisenberg.com">Zev Eisenberg</a>, and apologies to <a href="http://lazerwalker.com/">Mike Walker</a> who has a very bad memory for this sort of thing.
+    </footer>
+</body>
+</html>
