@@ -223,6 +223,15 @@
       </code>
     </div>
 
+    <div>
+        <h2>Bind variables and call functions for their side effect, ignoring the return value</h2>
+        <code>
+            if <span class='let'>case var</span> currentCount = <span class='expression'>home.headCount</span>, <span class='let'>case _</span> = <span class='expression'>optimisticIncrement(&amp;currentCount)</span>, currentCount < 5 {<br/>
+            <br/>
+            <span class='comment'>// insufficient optimism, you can feed more</span><br/>
+        </code>
+    </div>
+
         <p>Other more in-depth articles:
             <li><a href='https://appventure.me/2015/08/20/swift-pattern-matching-in-detail/'>Swift Pattern Matching In Detail - Benedikt Terhechte</a></li>
             <li><a href='https://oleb.net/blog/2015/09/swift-pattern-matching/'>Pattern Matching In Swift - Ole Begemann</a></li>
